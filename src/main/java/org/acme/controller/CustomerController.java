@@ -7,6 +7,7 @@ import org.acme.entity.Customer;
 import org.acme.service.CustomerService;
 
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -34,7 +35,7 @@ public class CustomerController {
     }
 
     @POST
-    public Customer postCustomer(Customer customer) {
+    public Customer postCustomer(@Valid Customer customer) {
         
         try {
             customerService.addCustomer(customer);
